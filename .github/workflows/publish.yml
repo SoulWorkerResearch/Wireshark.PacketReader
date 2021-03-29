@@ -30,7 +30,8 @@ jobs:
       run: dotnet restore
         
     - name: Build
-      run: dotnet build --no-restore --configuration Release -p:Version=${{ env.NOW }}
+      run: dotnet build --no-restore --configuration Release
+#       run: dotnet build --no-restore --configuration Release -p:Version=${{ env.NOW }}
       
     - name: publish on version change
       id: publish_nuget
