@@ -12,26 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
+    - uses: actions/checkout@v2    
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
-        
+        dotnet-version: 5.0.x        
     - name: Restore dependencies
-      run: dotnet restore
-      
+      run: dotnet restore      
     - name: Build
       run: dotnet build --no-restore --configuration Release
-#     - name: Test
-#       run: dotnet test --no-build --verbosity normal
-
-#     - name: Set current date as env variable
-#       run: echo "NOW::$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
-      
-#     - name: Echo current date
-#       run: echo $NOW
 
     - name: Use Nerdbank GitVersioning for set version
     - uses: dotnet/nbgv@master
@@ -39,8 +28,8 @@ jobs:
         setAllVars: true
       
     - name: publish on version change
+    - uses: rohith/publish-nuget@v2
       id: publish_nuget
-      uses: rohith/publish-nuget@v2
       with:
         # Filepath of the project to be packaged, relative to root of repository
         PROJECT_FILE_PATH: SoulWorkerResearch.Wireshark.PacketReader.csproj
