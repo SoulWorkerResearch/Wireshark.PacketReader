@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SoulWorkerResearch.Wireshark.PacketReader
 {
@@ -12,6 +11,6 @@ namespace SoulWorkerResearch.Wireshark.PacketReader
         public string RelativeTime { get; init; } = string.Empty;
         public string SrcIp { get; init; } = string.Empty;
         public string DstIp { get; init; } = string.Empty;
-        public IEnumerable<byte> Payload { get; init; } = Array.Empty<byte>();
+        public byte[] Payload { get; init; } = Array.Empty<byte>();
     }
 }
