@@ -3,9 +3,10 @@ name: .NET
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    
+env:
+  NUGET_API_KEY: secrets.NUGET_API_KEY
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,4 +33,4 @@ jobs:
       run: dotnet build --no-restore --configuration Release -p:Version=${{ env.NOW }}
       
     - name: Publish nuget.org
-      run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --no-symbols
+      run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key $NUGET_API_KEY
