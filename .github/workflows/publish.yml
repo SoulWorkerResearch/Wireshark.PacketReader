@@ -29,4 +29,4 @@ jobs:
       run: dotnet restore
         
     - name: Build
-      run: dotnet build --no-restore --configuration Release -p:Version=${{ NOW }}
+      run: dotnet build --no-restore --configuration Release -p:Version=${{ env.NOW }}
