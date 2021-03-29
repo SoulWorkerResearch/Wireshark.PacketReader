@@ -10,7 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+    steps:      
+    - name: Set current date as env variable
+      run: echo "NOW=$(date +'%Y.%m.%d.%H%M%S')" >> $GITHUB_ENV
+      
+    - name: Echo current date
+      run: echo $NOW
+      
     - name: Check
       uses: actions/checkout@v2
     
@@ -21,12 +27,6 @@ jobs:
         
     - name: Restore dependencies
       run: dotnet restore
-      
-    - name: Set current date as env variable
-      run: echo "NOW=$(date +'%Y%m.%d%H.%M%S')" >> $GITHUB_ENV
-      
-    - name: Echo current date
-      run: echo $NOW
         
     - name: Build
       run: dotnet build --no-restore --configuration Release -p:Version=$NOW
