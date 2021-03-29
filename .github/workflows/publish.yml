@@ -32,5 +32,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release -p:Version=${{ env.NOW }}
       
-    - name: Publish nuget.org
-      run: dotnet nuget push **/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key $NUGET_API_KEY
+    - name: Push to NuGet Feed
+      run: dotnet push **/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key $NUGET_API_KEY
