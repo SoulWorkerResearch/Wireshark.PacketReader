@@ -22,6 +22,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
+    - name: Use Nerdbank GitVersioning for setup version
+      uses: dotnet/nbgv@master
+      with:
+        setAllVars: true
+      
     - name: Build
       run: dotnet build --no-restore
       
