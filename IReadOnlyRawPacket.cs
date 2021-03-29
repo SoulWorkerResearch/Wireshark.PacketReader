@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SoulWorkerResearch.Wireshark.PacketReader
+﻿namespace SoulWorkerResearch.Wireshark.PacketReader
 {
     public interface IReadOnlyRawPacket
     {
@@ -11,6 +9,6 @@ namespace SoulWorkerResearch.Wireshark.PacketReader
         string RelativeTime { get; }
         string SrcIp { get; }
         string DstIp { get; }
-        IEnumerable<byte> Payload { get; }
+        byte[] Payload { get; }
     }
 }
