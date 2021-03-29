@@ -22,13 +22,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
-    - name: Use Nerdbank GitVersioning for setup version
-      uses: dotnet/nbgv@master
-      with:
-        setAllVars: true
+    - name: Set current date as env variable
+      run: echo "NOW::$(date +'%Y%m.%dT%H.%M%S')" >> $GITHUB_ENV
       
+    - name: Echo current date
+      run: echo $NOW
+        
     - name: Build
-      run: dotnet build --no-restore
-      
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build --no-restore --configuration Release -p:Version=$NOW
