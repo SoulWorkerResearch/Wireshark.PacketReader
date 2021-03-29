@@ -20,7 +20,7 @@ jobs:
     - name: Show api key
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: echo $NUGET_API_KEY
+      run: echo $NUGET_API_KEY
       
     - name: Check
       uses: actions/checkout@main
