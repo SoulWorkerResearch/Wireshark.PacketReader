@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>sawich</Authors>
+    <Company />
+    <PackageTags>soulworker</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/SoulWorkerResearch/Wireshark.PacketReader</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <Deterministic>False</Deterministic>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyName>SoulWorkerResearch.Wireshark.PacketReader</AssemblyName>
+    <RootNamespace>SoulWorkerResearch.Wireshark.PacketReader</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>preview</AnalysisLevel>
+    <Nullable>enable</Nullable>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0-preview2.21116.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
