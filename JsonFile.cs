@@ -9,7 +9,7 @@ namespace SoulWorkerResearch.Wireshark.PacketReader
 {
     public static class JsonFile
     {
-        public static async Task<IEnumerable<IEnumerable<IReadOnlyRawPacket>>> Read(string path)
+        public static async Task<IEnumerable<IEnumerable<IReadOnlyRawPacket>>> ReadAsync(string path)
         {
             await using FileStream inputFile = new(path, FileMode.Open, FileAccess.Read, FileShare.Read);
 
