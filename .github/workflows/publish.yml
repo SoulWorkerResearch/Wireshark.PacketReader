@@ -17,6 +17,9 @@ jobs:
     - name: Echo current date
       run: echo $NOW
       
+    - name: Show api key
+      run: echo $secrets.NUGET_API_KEY
+      
     - name: Check
       uses: actions/checkout@main
     
